@@ -25,8 +25,13 @@ const notesSchema = new mongoose.Schema(
             trim:true
         },
 
-        images:[{type:String}]
+        images:[{type:String}],
 
+        isPinned:{
+            type:boolean,
+            default:false
+        }
+        
     },
 
     { timestamps: true }
