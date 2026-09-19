@@ -17,19 +17,19 @@ const notesSchema = new mongoose.Schema(
         
         body:{
             type:String,
-            required:true
+            default:''
         },
 
         category:{
             type:String,
-            required:true,
-            trim:true
+            trim:true,
+            default:'General'
         },
 
-        images:[{type:String}],
+        images:[String],
 
         isPinned:{
-            type:boolean,
+            type:Boolean,
             default:false
         }
         
