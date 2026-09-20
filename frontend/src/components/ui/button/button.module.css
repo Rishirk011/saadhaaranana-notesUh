@@ -1,0 +1,25 @@
+.button{
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    border: 1px solid black;
+    border-radius: 6px;
+    box-shadow: 2px 3px 7px black;
+}
+
+
+.button:hover{
+    transform: translateY(-5px);
+}
+
+.primary {
+  background-color: var(--accent-primary, #1e3a8a);
+  color: var(--accent-text, #ffffff);
+}
+
+.secondary {
+  background-color: var(--bg-subtle, #f1f5f9);
+  color: var(--text-primary, #0f172a);
+  border-color: var(--border-color, #e2e8f0);
+}

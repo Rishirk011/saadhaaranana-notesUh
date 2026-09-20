@@ -1,46 +1,27 @@
-import { useEffect, useState, useRef} from "react";
-import { increment,decrement } from "./store";
-import {useSelector, useDispatch} from 'react-redux';
+import { useState } from "react";
+import Button from "./components/ui/button/Button";
 
-export default function App(){
+const App = () => {
 
-  const count = useSelector((state) => state.counter.value);
-  const dispatch = useDispatch();
+  const [auth,setAuth] = useState("login");
   
-
-  useEffect(()=>{
-    console.log('mounted once');
-
-  },[]);
-
-  useEffect(()=>{
-
-    const id = setInterval(()=>{
-      console.log('tick');
-    },1000);
-
-    return (()=>{
-      clearInterval(id);
-    })
-
-  },[]);
-
-  useEffect(()=>{
+    const toggle = () => {
+  
+      {
+        
+        setAuth(
+          auth === "login" ? "signup" : "login"
+        )}
+      
+      }
+  return <> 
     
-    console.log('count changed');
-
-  },[count]);
+    <Button onclick={toggle}>
+      {auth}
+    </Button>
   
-  return <>
-    <h2>{count}</h2>
-    <button onClick={()=>dispatch(decrement())}>
-      dec
-    </button>
-
-    <button onClick={()=>dispatch(increment())}>
-      inc
-    </button>
- 
   </>
 
 }
+
+export default App;
